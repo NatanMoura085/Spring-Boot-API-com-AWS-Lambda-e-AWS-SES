@@ -1,4 +1,4 @@
-# Spring Boot API com AWS Lambda e AWS SES
+# Spring Boot API de Envio de Email com AWS Lambda e AWS SES
 
 Este projeto é uma aplicação Spring Boot que integra com o AWS Lambda e o AWS SES para fornecer uma API que pode ser utilizada para acionar funções Lambda e enviar e-mails usando o Simple Email Service (SES) da AWS.
 
@@ -11,7 +11,7 @@ Este projeto é uma aplicação Spring Boot que integra com o AWS Lambda e o AWS
 
 Antes de rodar este projeto, verifique os seguintes requisitos:
 
-- Java 11 ou superior
+- Java 17 ou superior
 - Maven 3.6+ para gerenciamento de dependências
 - Conta na AWS com permissões para acessar AWS Lambda e SES
 - AWS CLI configurado (opcional, mas recomendado para testes locais)
@@ -28,25 +28,20 @@ As dependências principais do projeto são:
 No arquivo `pom.xml`:
 
 ```xml
-<dependencies>
+ <dependencies>
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
+        <groupId>com.amazonaws.serverless</groupId>
+        <artifactId>aws-serverless-java-container-springboot3</artifactId>
+        <version>2.0.0-M1</version>
     </dependency>
     <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-lambda</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-ses</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-function-web</artifactId>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>ses</artifactId>
+        <version>2.16.29</version>
     </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
 </dependencies>
+
