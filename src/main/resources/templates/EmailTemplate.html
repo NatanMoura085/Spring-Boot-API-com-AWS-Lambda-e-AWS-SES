@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Transferência Realizada</title>
+</head>
+<img width="110px" height="100px" src="cid:image" style="margin-left:7px"/>
+<h3 th:text="'Olá, ' + ${nome} + '!'"></h3>
+<p>Informamos que transferência foi realizado com sucesso</p>
+<p><strong>Detalhes da transferência:</strong></p>
+<body>
+<ul>
+    <li>valor:<span th:text="${valor}"></span></li>
+    <li>data:<span th:text="${data}"></span></li>
+    <li>lojista:<span th:text="${beneficiario}"></span></li>
+    <li>destinatario:<span th:text="${destinatario}"></span></li>
+</ul>
+</body>
+</html>
